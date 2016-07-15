@@ -7,8 +7,10 @@ Install build essentials:
 ```
 $sudo apt-get install build-essential
 ```
-Install NODE and NPM
+### Install NODE and NPM
+
 Fastest way is to use apt-get but adding the correct sources:
+
 ```
 $ curl -sL https://deb.nodesource.com/setup_4.x | sudo -E bash -
 $ sudo apt-get install -y nodejs
