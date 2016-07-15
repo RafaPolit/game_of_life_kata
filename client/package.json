@@ -1,0 +1,21 @@
+{
+  "name": "GameOfLife-Kata-Client",
+  "version": "0.0.1",
+  "description": "Game of life Kata - Client",
+  "license" : "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/levelap-dev/colegios.git"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "grunt": ">=1.0.1",
+    "grunt-karma": ">=0.12.2",
+    "karma": ">=0.13.22",
+    "karma-jasmine": "~0.1.6",
+    "karma-coverage": ">=0.5.5"
+  },
+  "engines": {
+    "node": ">=4.2.0"
+  }
+}
