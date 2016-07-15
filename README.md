@@ -1,4 +1,5 @@
-### Game Of Life - Kata
+Game Of Life - Kata
+===================
 
 General installation instructions:
 
@@ -17,21 +18,26 @@ It may be important to update npm:
 $ npm install npm@2 -g
 ```
 
-Bower:
-```
-$ sudo npm install -g bower
-```
+### For Tests
 
-For running tests, we will use GRUNT (JS task runner) installed globally:
+For running tests, we will use GRUNT (JS task runner) so we need to install it globally:
 ```
 $ sudo npm install -g grunt-cli
 ```
 
-In order to install dependencies and other external files, cd into each **server** and **client** folders and run:
+### Dependencies
+
+In order to install dependencies and other external required modules, cd into each **server** and **client** folders and run:
 ```
 $ npm install
 ```
-In the client folder, it is also important to execute:
+
+**Client** uses Bower to keep track of required packages, so we need Bower installed globally as well:
+```
+$ sudo npm install -g bower
+```
+
+Now cd into the client folder and install the bower packages defined in the bower.json file with:
 ```
 $ bower install
 ```
