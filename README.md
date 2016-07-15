@@ -22,7 +22,7 @@ Bower:
 $ sudo npm install -g bower
 ```
 
-For running tests, we would use GRUNT (JS task runner) installed globally:
+For running tests, we will use GRUNT (JS task runner) installed globally:
 ```
 $ sudo npm install -g grunt-cli
 ```
