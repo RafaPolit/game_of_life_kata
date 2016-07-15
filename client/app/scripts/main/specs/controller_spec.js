@@ -13,8 +13,8 @@ describe('Controller: Main', function () {
   }));
 
   describe('On instance', function(){
-    it('should set "loaded" variable in scope', function() {
-      expect(scope.loaded).toContain('loaded');
+    it('should set "controller_loaded" variable in scope', function() {
+      expect(scope.controller_loaded).toContain('loaded');
     });
   });
 

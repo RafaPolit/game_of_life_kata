@@ -1,29 +1,31 @@
 <!doctype html>
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <title>Game of Life</title>
-  <meta name="description" content="">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Game of Life</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/main.css">
 
-</head>
-<body ng-app="App" ontouchstart="" onmouseover="">
-  <h1>General App</h1>
-  <div ng-controller="Main">
-    <h2>Main controller: {{loaded || 'not loaded!'}}
-    <div ng-view ng-cloak></div>
-  </div>
+  </head>
+  <body ng-app="App" ontouchstart="" onmouseover="">
+    <h1>General App</h1>
+    <div ng-controller="Main">
+      <h2>Controller status: {{controller_loaded || 'not loaded!'}}</h2>
+      <div ng-view ng-cloak></div>
+    </div>
 
-  <script src="bower_components/jquery/jquery.js"></script>
-  <script src="bower_components/angular/angular.js"></script>
-  <script src="bower_components/angular-route/angular-route.js"></script>
+    <script src="bower_components/jquery/jquery.js"></script>
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/angular-route/angular-route.js"></script>
 
-  <script src="bower_components/jquery-ui/ui/jquery-ui.js"></script>
-  <script src="bower_components/underscore/underscore.js"></script>
+    <script src="bower_components/jquery-ui/ui/jquery-ui.js"></script>
+    <script src="bower_components/underscore/underscore.js"></script>
 
-  <script src="scripts/main/module.js"></script>
-  <script src="scripts/main/controller.js"></script>
-</body>
+    <script src="scripts/main/module.js"></script>
+    <script src="scripts/game_of_life/module.js"></script>
+    <script src="scripts/main/controller.js"></script>
+    <script src="scripts/game_of_life/controller.js"></script>
+  </body>
 </html>
