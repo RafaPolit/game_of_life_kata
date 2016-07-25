@@ -16,6 +16,79 @@ describe('Controller: game_of_life', function () {
     it('should set "controller_loaded" variable in scope', function() {
       expect(scope.controller_loaded).toContain('loaded');
     });
+
+    it('should have matrix initialized with default values', function() {
+      expect(scope.matrix).toEqual([
+        [0,0,0,0,0,0,0,0],
+        [0,0,0,0,1,0,0,0],
+        [0,0,0,1,1,0,0,0],
+        [0,0,0,0,0,0,0,0],
+      ]);
+    });
+  });
+
+  describe('initialize_matrix function', function() {
+    it('should initialize the matrix with a predifined state', function() {
+      scope.initialize_matrix({
+        rows: 4,
+        cols: 8,
+        on_cells: [ { row: 1, col: 4 }, { row: 2, col: 3 }, { row: 2, col: 4 } ]
+      });
+
+      expect(scope.matrix).toEqual([
+        [0,0,0,0,0,0,0,0],
+        [0,0,0,0,1,0,0,0],
+        [0,0,0,1,1,0,0,0],
+        [0,0,0,0,0,0,0,0],
+      ]);
+
+      scope.initialize_matrix({
+        rows: 4,
+        cols: 6,
+        on_cells: [ { row: 0, col: 1 }, { row: 1, col: 2 }, { row: 2, col: 3 }, { row: 3, col: 4 } ]
+      });
+
+      expect(scope.matrix).toEqual([
+        [0,1,0,0,0,0],
+        [0,0,1,0,0,0],
+        [0,0,0,1,0,0],
+        [0,0,0,0,1,0],
+      ]);
+    });
+  });
+
+  describe('Compute next generation', function() {
+    it('should modify matrix to show new life', function() {
+      scope.next_generation();
+      expect(scope.matrix).toEqual([
+        [0,0,0,0,0,0,0,0],
+        [0,0,0,1,1,0,0,0],
+        [0,0,0,1,1,0,0,0],
+        [0,0,0,0,0,0,0,0],
+      ]);
+    });
+  });
+
+  describe('Compute oscilator 1', function() {
+
+    beforeEach(function() {
+      scope.initialize_matrix({
+        rows: 5,
+        cols: 5,
+        on_cells: [ { row: 2, col: 1 }, { row: 2, col: 2 }, { row: 2, col: 3 } ]
+      });
+    });
+
+    it('should modify matrix to show new life', function() {
+      scope.next_generation();
+      expect(scope.matrix).toEqual([
+        [0,0,0,0,0],
+        [0,0,1,0,0],
+        [0,0,1,0,0],
+        [0,0,1,0,0],
+        [0,0,0,0,0],
+      ]);
+    });
   });
 
   describe('when going to /game_of_life', function() {
