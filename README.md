@@ -1,6 +1,8 @@
 Game Of Life - Kata
 ===================
 
+Rafael Pólit
+
 General installation instructions:
 
 Install build essentials:
