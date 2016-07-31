@@ -1,3 +1,14 @@
-<div>Here will go all the HTML magic that will show the <b>Game of Life</b> grid.</div>
-<div>Controller status: {{ controller_loaded || 'not loaded!' }}</div>
+<div>
+  <div ng-repeat="row in matrix" class="row">
+    <span ng-repeat="cell in row track by $index"
+          class="cell"
+          ng-class="{ 'alive': live_cell($parent.$index, $index) }"></span>
+  </div>
+  <br>
+  {{ranges}}
+  <br>
+  <button ng-click="next_generation()">Next</button>
+  <button ng-click="start_life()">Start</button>
+  <button ng-click="stop_life()">Stop</button>
+</div>
 <div><br><a href="#/">Home</a></div>
